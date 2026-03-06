@@ -28,7 +28,7 @@ function App() {
                 headers['Authorization'] = `Bearer ${token}`;
             }
 
-            const response = await fetch(`http://${window.location.hostname}:8080/shorten`, {
+            const response = await fetch(`${BASE_URL}/shorten`, {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify({ longUrl: url })
@@ -39,7 +39,7 @@ function App() {
             }
 
             const shortCode = await response.text();
-            setShortUrl(`http://localhost:8080/${shortCode}`);
+            setShortUrl(`${BASE_URL}/${shortCode}`);
         } catch (error) {
             console.error('Error:', error);
             alert('Failed to shorten URL. Is the backend running?');

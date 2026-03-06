@@ -30,7 +30,7 @@ export default function Analytics({ token }) {
         setAnalyticsData(null);
 
         try {
-            const resp = await fetch(`http://${window.location.hostname}:8080/analytics/${code}`, {
+            await fetch(`${import.meta.env.VITE_API_URL}/analytics/${code}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
