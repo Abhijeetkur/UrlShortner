@@ -4,6 +4,7 @@ import './App.css';
 import Analytics from './Analytics';
 import Auth from './Auth';
 
+
 function App() {
     const [token, setToken] = useState(localStorage.getItem('token') || '');
     const [activeTab, setActiveTab] = useState('shorten');
@@ -11,6 +12,7 @@ function App() {
     const [shortUrl, setShortUrl] = useState('');
     const [isCopied, setIsCopied] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const BASE_URL = import.meta.env.VITE_API_URL;
 
     const handleShorten = async (e) => {
         e.preventDefault();
