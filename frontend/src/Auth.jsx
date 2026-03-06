@@ -19,7 +19,7 @@ export default function Auth({ setToken }) {
         const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
 
         try {
-            await fetch(`${import.meta.env.VITE_API_URL}${endpoint}`, {
+            const resp = await fetch(`${import.meta.env.VITE_API_URL}${endpoint}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

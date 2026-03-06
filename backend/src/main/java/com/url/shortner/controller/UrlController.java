@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.Map;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import jakarta.servlet.http.HttpServletRequest;
 
-@CrossOrigin(origins = "*")
 @RestController
 public class UrlController {
 
